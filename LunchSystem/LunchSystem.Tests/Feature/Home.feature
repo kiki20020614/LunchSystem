@@ -12,8 +12,16 @@
 
 
 @OrderMeal
+Scenario: order lunch
+	Given I have opened browser to lunch system
+	And I have entered "Unadon" into the page 
+	When I press ok
+	Then the result should show "Unadon" on the screen
+
+@OrderMeal
 Scenario: See the menu and order lunch
 	Given I have opened browser to lunch system
+	And I saw the menu image
 	And I have entered "Unadon" into the page 
 	When I press ok
 	Then the result should show "Unadon" on the screen

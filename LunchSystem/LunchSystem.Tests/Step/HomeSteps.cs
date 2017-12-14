@@ -16,7 +16,29 @@ namespace LunchSystem.Tests.Step
         {
             _driver.Navigate().GoToUrl("http://localhost:50621");
         }
+
         
+        [Given(@"I saw the menu image")]
+        public void GivenISawTheMenuImage()
+        {
+            //Assert.AreEqual(true, _driver.FindElement(By.XPath("//img[contains(@id,'imgMenu')]")).Displayed);
+
+
+
+
+            //var imageFile = _driver.FindElement(By.XPath("//img[contains(@id,'imgMenu')]"));
+
+            //Boolean ImagePresent = (Boolean)((JavascriptExecutor)driver).executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", ImageFile);
+            //if (!ImagePresent)
+            //{
+            //    System.out.println("Image not displayed.");
+            //}
+            //else
+            //{
+            //    System.out.println("Image displayed.");
+            //}
+        }
+
         [Given(@"I have entered ""(.*)"" into the page")]
         public void GivenIHaveEnteredIntoThePage(string meal)
         {

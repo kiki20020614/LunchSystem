@@ -65,11 +65,11 @@ namespace LunchSystem.Tests.Feature
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("See the menu and order lunch")]
+        [NUnit.Framework.DescriptionAttribute("order lunch")]
         [NUnit.Framework.CategoryAttribute("OrderMeal")]
-        public virtual void SeeTheMenuAndOrderLunch()
+        public virtual void OrderLunch()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("See the menu and order lunch", new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("order lunch", new string[] {
                         "OrderMeal"});
 #line 15
 this.ScenarioSetup(scenarioInfo);
@@ -80,6 +80,29 @@ this.ScenarioSetup(scenarioInfo);
 #line 18
  testRunner.When("I press ok", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 19
+ testRunner.Then("the result should show \"Unadon\" on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("See the menu and order lunch")]
+        [NUnit.Framework.CategoryAttribute("OrderMeal")]
+        public virtual void SeeTheMenuAndOrderLunch()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("See the menu and order lunch", new string[] {
+                        "OrderMeal"});
+#line 22
+this.ScenarioSetup(scenarioInfo);
+#line 23
+ testRunner.Given("I have opened browser to lunch system", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 24
+ testRunner.And("I saw the menu image", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+ testRunner.And("I have entered \"Unadon\" into the page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 26
+ testRunner.When("I press ok", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 27
  testRunner.Then("the result should show \"Unadon\" on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
