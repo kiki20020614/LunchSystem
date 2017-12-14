@@ -1,7 +1,29 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lunch";
 }
+<script type="text/javascript">
+    var mealList = "";
 
-<h2>Index</h2>
+    function order() {
+
+        var _meal = document.getElementById("meal");
+        mealList += _meal.value;// + "<br/>";
+
+        document.getElementById("result").innerHTML = mealList;
+    }
+
+    function clr() {
+
+        mealList = "";
+        document.getElementById("meal").value = "";
+        document.getElementById("result").innerHTML = "";
+    }
+</script>
+
+<h2>Lunch System</h2>
+<input type="text" id="meal" onclick='javascript: this.value = ""'/>
+<input type="button" id="submit" value="Order" onclick="order()" />
+<input type="button" id="clear" value="Clear" onclick="clr()" />
+<div id="result"></div>
 

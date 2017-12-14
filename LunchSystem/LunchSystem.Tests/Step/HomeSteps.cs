@@ -1,4 +1,6 @@
 ﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using TechTalk.SpecFlow;
 
@@ -16,21 +18,22 @@ namespace LunchSystem.Tests.Step
         }
         
         [Given(@"I have entered ""(.*)"" into the page")]
-        public void GivenIHaveEnteredIntoThePage(string p0)
+        public void GivenIHaveEnteredIntoThePage(string meal)
         {
-            //ScenarioContext.Current.Pending();
+            _driver.FindElement(By.Id("meal")).SendKeys(meal);
         }
         
         [When(@"I press ok")]
         public void WhenIPressOk()
         {
-            //ScenarioContext.Current.Pending();
+            _driver.FindElement(By.Id("submit")).Click();
         }
-        
+
         [Then(@"the result should show ""(.*)"" on the screen")]
-        public void ThenTheResultShouldShowOnTheScreen(string p0)
+        public void ThenTheResultShouldShowOnTheScreen(string meal)
         {
-            //ScenarioContext.Current.Pending();
+            var _meal = _driver.FindElement(By.Id("result")).GetAttribute("innerHTML");
+            Assert.AreEqual(meal, _meal);
         }
 
         [AfterScenario("OrderMeal")]
