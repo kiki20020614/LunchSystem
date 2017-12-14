@@ -11,6 +11,7 @@
 #	Then the result should be 120 on the screen
 
 
+@OrderMeal
 Scenario: See the menu and order lunch
 	Given I have opened browser to lunch system
 	And I have entered "Unadon" into the page 

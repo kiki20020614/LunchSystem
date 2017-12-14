@@ -32,5 +32,12 @@ namespace LunchSystem.Tests.Step
         {
             //ScenarioContext.Current.Pending();
         }
+
+        [AfterScenario("OrderMeal")]
+        public void Close()
+        {
+            _driver.Close();
+            _driver.Quit();
+        }
     }
 }
